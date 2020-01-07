@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "buildwww": "rm -rf www/ docs/; ionic cordova build browser --prod; cp src/404.html www/; cp platforms/browser/config.xml www/; mv www docs; grep -rl '(YOUR_API_KEY_IS_HERE)' ./docs/ | xargs sed -i '' 's/(YOUR_API_KEY_IS_HERE)/(API key)/g'",
-    "link": "bash bin/local_dev.sh"
+    "link": "bash bin/local_dev.sh",
+    "defkey": "defkey(){ sed -i 's/(YOUR_API_KEY_IS_HERE)/'$1'/g' src/app/app.component.ts;};defkey $1"
   },
   "private": true,
   "dependencies": {
